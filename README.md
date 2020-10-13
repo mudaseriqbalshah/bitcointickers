@@ -1,4 +1,4 @@
-Real  time bitcoin price tickers of different exchanges using websockets
+#Real  time bitcoin price tickers of different exchanges using websockets
 
 Just clone it and run index.html
 
