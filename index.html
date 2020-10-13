@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Real Time Bitcoin Price Tickers of Different Crypto Exchanges using web sockets</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="https://thehash.io">
+                <img src="images/logo.png" class="d-inline-block align-top" alt="">
+              </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="https://thehash.io" target="_blank">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://thehash.io/about-us/" target="_blank">About us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://bit.ly/3jsjKcM" target="_blank">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://thehash.io/our-values/" target="_blank">Our Values</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://thehash.io/blog/" target="_blank">Blogs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://thehash.io/#contact-us-dark" target="_blank">Contact us</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row justify-content-center">
+                <h6>This is a sample page to compare bitcoin tickers on different pages using web sockets. If you want to add exchange or add new pair like ETHUSD or BCHUSDT etc or any custom solution according to your needs, please contact us <a href="mailto:business@thehash.io">business@thehash.io</a></h6>
+            </div>
+            <div class="row">
+                <div class="card col-md-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Binance</h5>
+                        <h6 class="card-subtitle mb-6 text-center" id="lblBinance">0</h6>
+                    </div>
+                </div>
+                <div class="card col-md-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Ftx</h5>
+                        <h6 class="card-subtitle mb-6 text-muted" id="lblFtx">0</h6>
+                    </div>
+                </div>
+                <div class="card col-md-4">
+                    <div class="card-body">
+                        <h5 class="card-title">BitFinex</h5>
+                        <h6 class="card-subtitle mb-6 text-muted" id="lblBitFinex">0</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card col-md-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Coin Base Pro</h5>
+                        <h6 class="card-subtitle mb-6 text-muted" id="lblCoinBasePro">0</h6>
+                    </div>
+                </div>
+                <div class="card col-md-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Hit BTC</h5>
+                        <h6 class="card-subtitle mb-6 text-muted" id="lblHitbtc">0</h6>
+                    </div>
+                </div>
+                <div class="card col-md-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Bequant</h5>
+                        <h6 class="card-subtitle mb-6 text-muted" id="lblBequant">0</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="card col-md-4">
+                    <div class="card-body">
+                        <h5 class="card-title">BitBlinx</h5>
+                        <h6 class="card-subtitle mb-6 text-muted" id="lblBitBlinx">0</h6>
+                    </div>
+                </div>
+                <div class="card col-md-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Bibo</h5>
+                        <h6 class="card-subtitle mb-6 text-muted" id="lblBibo">0</h6>
+                    </div>
+                </div>
+                <div class="card col-md-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Gemini</h5>
+                        <h6 class="card-subtitle mb-6 text-muted" id="lblGemini">0</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card col-md-6">
+                    <div class="card-body">
+                        <h5 class="card-title">Crypto</h5>
+                        <h6 class="card-subtitle mb-6 text-muted" id="lblCrypto">0</h6>
+                    </div>
+                </div>
+                <div class="card col-md-6">
+                    <div class="card-body">
+                        <h5 class="card-title">BitMex</h5>
+                        <h6 class="card-subtitle mb-6 text-muted" id="lblBitmex">0</h6>
+                    </div>
+                </div>
+                
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card" style="width: 40rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Compare Crypto Exchanges</h5>
+                          <p class="card-text">Contact us for more demos and blockchain software development service. Please give us more suggestions to build a productive tool like this.</p>
+                          
+                          <h6 class="card-title">Email: <a href="mailto:business@thehash.io">business@thehash.io</a></h6>
+                          <h6 class="card-title">Telegram: <a href="https://t.me/mudaseriqbal">mudaseriqbal</a></h6>
+                          <h6 class="card-title">Skype: <a href="skype:mudaser.iqbal?chat">Start Chat</a></h6>
+                          <h6 class="card-title">Bitcoin Address: 1M18rAuicgGRNgETVEi3wtcTGikBJXLcEd</h6>
+                          
+                          
+                          <a href="https://bit.ly/3dhIZNd" class="btn btn-primary">Go to our website</a>
+                          
+                          <a href="https://bit.ly/3jsjKcM" class="btn btn-primary">Go to our portfolio</a>
+                        </div>
+                      </div>
+                      
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/pako/1.0.3/pako.min.js"></script>
+<script src="js/ticker.js"></script>
